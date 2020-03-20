@@ -13,6 +13,7 @@ class TodoList {
   deleteTask(taskId) {
     const deletedTask = this.tasks[taskId];
     delete this.tasks[taskId];
+    this.taskCount -= 1;
     return deletedTask;
   }
 
