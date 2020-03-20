@@ -6,20 +6,21 @@
 <ul>
   <% for (const id in tasks) {%>
   <li>
-    <div class="taskWrapper">
+    <div class="taskWrapper" id="<%=id%>">
       <h3 class="task"><%=tasks[id].task%></h3>
       <p class="description">Details: <%=tasks[id].description%></p>
       <p class="dueDate">Due: <%=tasks[id].dueDate%></p>
       <p class="status"><%=tasks[id].isComplete ? "Complete!" : "Incomplete!"%></p>
       <div class="taskActions">
-        <button name="editTask" onclick="console.log('Add edit task feature')">Edit Task</button>
-        <button name="toggleComplete" onclick="console.log('Add toggle complete feature')"><%=tasks[id].isComplete ? "Complete" : "Mark Incomplete"%></button>
-        <button name="deleteTask" onclick="console.log('Add delete task feature')">Delete</button>
+        <button onclick="toggleEdit(<%=id%>)">Edit Task</button>
+        <button onclick="toggleComplete(<%=id%>)"><%=tasks[id].isComplete ? "Complete" : "Mark Incomplete"%></button>
+        <button onclick="deleteTask(<%=id%>)">Delete</button>
       </div>
     </div>
   </li>
   <% } %>
 </ul>
+<script type="text/javascript" src="javascripts/taskActions.js"></script>
 <% } else {%>
 <p>Empty. Add a task!</p>
 <% } %>
