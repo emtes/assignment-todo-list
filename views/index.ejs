@@ -8,9 +8,16 @@
   <li>
     <div class="taskWrapper" id="<%=id%>">
       <h3 class="task"><%=tasks[id].task%></h3>
-      <p class="description">Details: <%=tasks[id].description%></p>
-      <p class="dueDate">Due: <%=tasks[id].dueDate%></p>
-      <p class="status"><%=tasks[id].isComplete ? "Complete!" : "Incomplete!"%></p>
+      <dl class="taskComponents">
+        <dt class="taskComponent">Description</dt>
+        <dd class="description"><%=tasks[id].description%></dd>
+
+        <dt class="taskComponent">Due Date</dt>
+        <dd class="dueDate"><%=tasks[id].dueDate%></dd>
+
+        <dt class="taskComponent">Status</dt>
+        <dd class="status"><%=tasks[id].isComplete ? "Complete!" : "Incomplete!"%></dd>
+      </dl>
       <div class="taskActions">
         <button onclick="toggleEdit(<%=id%>)">Edit Task</button>
         <button onclick="toggleComplete(<%=id%>)"><%=tasks[id].isComplete ? "Mark Incomplete" : "Complete"%></button>
