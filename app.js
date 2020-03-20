@@ -32,6 +32,7 @@ app.post('/toggle-task-complete-:id', (req, res) => {
 app.post('/delete-task-:id', (req, res) => {
   const taskId = req.params.id;
   todoList.deleteTask(taskId);
+  Task.count -= 1;
 });
 
 app.listen(port, () => {
