@@ -19,7 +19,7 @@
         <dd class="status"><%=tasks[id].isComplete ? "Complete!" : "Incomplete!"%></dd>
       </dl>
       <div class="taskActions">
-        <button onclick="toggleEdit(<%=id%>)">Edit Task</button>
+        <button class="edit" onclick="toggleEdit(<%=id%>)">Edit Task</button>
         <button onclick="toggleComplete(<%=id%>)"><%=tasks[id].isComplete ? "Mark Incomplete" : "Complete"%></button>
         <button onclick="deleteTask(<%=id%>)">Delete</button>
       </div>
