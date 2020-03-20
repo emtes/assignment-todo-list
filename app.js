@@ -29,6 +29,11 @@ app.post('/toggle-task-complete-:id', (req, res) => {
   todoList.toggleTaskComplete(taskId);
 });
 
+app.post('/delete-task-:id', (req, res) => {
+  const taskId = req.params.id;
+  todoList.deleteTask(taskId);
+});
+
 app.listen(port, () => {
   console.log(`Application listening on port ${port}...`);
 });
