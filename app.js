@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 const todoList = new TodoList();
@@ -33,6 +34,13 @@ app.post('/delete-task-:id', (req, res) => {
   const taskId = req.params.id;
   todoList.deleteTask(taskId);
   Task.count -= 1;
+});
+
+app.post('/editTask-:id', (req, res) => {
+  const taskId = req.params.id;
+  const { newTask, newDescription, newDueDate } = req.body;
+  const editedTask = new Task(newTask, newDescription, newDueDate);
+  todoList.updateTask(taskId, editedTask);
 });
 
 app.listen(port, () => {
