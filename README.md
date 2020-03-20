@@ -12,4 +12,4 @@
 
 This application is deployed [here](https://safe-headland-23681.herokuapp.com/).
 
-If you want to run it locally, clone this repository and run `npm start` or `node app.js`
+If you want to run it locally, clone this repository and run `npm install`. Then, run `npm start` or `node app.js`.
