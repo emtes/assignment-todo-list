@@ -18,9 +18,8 @@ class TodoList {
   }
 
   updateTask(taskId, newTask) {
-    const oldTask = this.tasks.taskId;
-    this.tasks.taskId = newTask;
-    return oldTask;
+    this.tasks[taskId] = newTask;
+    return this.taskCount;
   }
 
   toggleTaskComplete(taskId) {
