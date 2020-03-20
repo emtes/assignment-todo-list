@@ -24,6 +24,11 @@ app.post('/addtask', (req, res) => {
   res.redirect('/');
 });
 
+app.post('/toggle-task-complete-:id', (req, res) => {
+  const taskId = req.params.id;
+  todoList.toggleTaskComplete(taskId);
+});
+
 app.listen(port, () => {
   console.log(`Application listening on port ${port}...`);
 });
