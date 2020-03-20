@@ -13,7 +13,7 @@
       <p class="status"><%=tasks[id].isComplete ? "Complete!" : "Incomplete!"%></p>
       <div class="taskActions">
         <button onclick="toggleEdit(<%=id%>)">Edit Task</button>
-        <button onclick="toggleComplete(<%=id%>)"><%=tasks[id].isComplete ? "Complete" : "Mark Incomplete"%></button>
+        <button onclick="toggleComplete(<%=id%>)"><%=tasks[id].isComplete ? "Mark Incomplete" : "Complete"%></button>
         <button onclick="deleteTask(<%=id%>)">Delete</button>
       </div>
     </div>
